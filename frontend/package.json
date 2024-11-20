@@ -1,0 +1,31 @@
+{
+  "name": "e-commerce",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:4000",
+  "scripts": {
+    "start": "lite-server",
+    "build": "echo 'No build step required for vanilla JS'",
+    "test": "echo 'No test framework specified'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
