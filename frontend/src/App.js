@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
 import GetAllProducts from "./components/GetAllProducts";
+import Home from "./components/Home";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -23,7 +24,7 @@ const App = () => {
 
   return (
     <div>
-      <Header 
+      <Header
         isAuthenticated={isAuthenticated}
         onLogin={() => setShowLogin(true)}
         onLogout={() => {
@@ -34,10 +35,11 @@ const App = () => {
 
       {showLogin && <LogIn onLoginSuccess={handleLoginSuccess} onClose={() => setShowLogin(false)} switchToSignup={() => { setShowLogin(false); setShowSignup(true); }} />}
       {showSignup && <SignUp onSignupSuccess={handleSignupSuccess} onClose={() => setShowSignup(false)} switchToLogin={() => { setShowSignup(false); setShowLogin(true); }} />}
-      
-      <Routes>
-        <Route path="/products" element={<GetAllProducts />} />
-      </Routes>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<GetAllProducts />} />
+        </Routes>
     </div>
   );
 };
